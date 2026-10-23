@@ -27,7 +27,8 @@ const DOCS = [
 ] as const;
 
 export function LegalShell({ chip, children, crumb = true }: { chip?: string; children: ReactNode; crumb?: boolean }) {
-  const path = useRouterState({ select: (s) => s.location.pathname });
+  // Static hosts serve /soporte as /soporte/; drop the slash so the prerendered page hydrates.
+  const path = useRouterState({ select: (s) => s.location.pathname.replace(/(.)\/$/, "$1") });
   const others = DOCS.filter((d) => d.to !== path);
   const isDoc = others.length < DOCS.length;
   return (
