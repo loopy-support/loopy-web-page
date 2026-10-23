@@ -1,0 +1,2 @@
+- Landing page sections live in src/components/loopy/*; images are referenced only via src/lib/assets.ts so stand-ins can be swapped in one place.
+- Primary CTAs read APP_STORE_URL from src/config.ts; never hardcode store links.

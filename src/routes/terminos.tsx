@@ -1,0 +1,73 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { LegalShell, legalHead } from "@/components/loopy/LegalShell";
+
+export const Route = createFileRoute("/terminos")({
+  head: () =>
+    legalHead(
+      "Loopy · Términos de uso",
+      "Términos de uso de Loopy: qué puedes hacer en Loopy y qué no. Versión 2, vigente desde el 20 de octubre de 2026.",
+      "/terminos",
+    ),
+  component: Terminos,
+});
+
+function Terminos() {
+  return (
+    <LegalShell chip="Versión 2 · Vigente desde el 20 de octubre de 2026">
+      <h1>Términos de uso</h1>
+      <p className="fecha">Versión 2 · Vigente desde el 20 de octubre de 2026</p>
+
+      <p>Loopy es una app para avanzar en proyectos personales y en equipo. Estos términos explican qué puedes hacer en Loopy y qué no. El responsable es Luis Agustín Álvarez Ibaceta. Para cualquier consulta, escribe a <a href="mailto:loopy.support.app@gmail.com">loopy.support.app@gmail.com</a>.</p>
+
+      <h2>Resumen</h2>
+      <ul>
+        <li>Loopy es para personas <strong>mayores de 18 años</strong>.</li>
+        <li>Usar Loopy solo para ti no requiere aceptar nada más.</li>
+        <li>Antes de compartir algo con otras personas (crear o entrar a un equipo, invitar, agregar amigos o activar tu perfil social), Loopy te pide aceptar estos términos.</li>
+        <li><strong>Tolerancia cero:</strong> no se permite el contenido ofensivo ni las personas abusivas.</li>
+        <li>Puedes reportar y bloquear a cualquier persona. Revisamos cada reporte en menos de 24 horas.</li>
+      </ul>
+
+      <h2>Aceptar estos términos</h2>
+      <p>Cuando tocas «Acepto» en la app, aceptas estos términos y la <Link to="/privacidad">política de privacidad</Link>. Si no los aceptas, puedes seguir usando Loopy para tus proyectos personales, pero no compartir con otras personas.</p>
+      <p>Para usar Loopy debes tener al menos 18 años. Al aceptar, confirmas que los tienes.</p>
+
+      <h2>Lo que compartes</h2>
+      <p>Lo que escribes en un proyecto en equipo (check-ins, diario, hitos, la pauta del proyecto) y tu nombre los ven las personas de ese equipo. Si activas el perfil social, cualquier persona que use Loopy puede encontrarte por tu nombre. Lo que escribes es tuyo, y eres responsable de ello. Solo comparte lo que tienes derecho a compartir.</p>
+
+      <h2>Tolerancia cero con el contenido ofensivo y las personas abusivas</h2>
+      <p>En Loopy no se permite publicar, en ningún nombre, texto o documento que vean otras personas:</p>
+      <ul>
+        <li>discurso de odio o discriminación por origen, etnia, nacionalidad, religión, género, orientación sexual, discapacidad u otra condición;</li>
+        <li>acoso, intimidación, humillación o amenazas contra cualquier persona;</li>
+        <li>contenido sexual explícito, o cualquier contenido sexual que involucre a menores de edad;</li>
+        <li>incitación a la violencia, a la autolesión o al suicidio;</li>
+        <li>información personal de otra persona sin su permiso;</li>
+        <li>suplantación de otra persona, spam o engaños;</li>
+        <li>cualquier contenido ilegal o que infrinja derechos de otras personas.</li>
+      </ul>
+
+      <h2>Cómo cuidamos la comunidad</h2>
+      <ul>
+        <li><strong>Filtro:</strong> Loopy revisa en tu iPhone los textos que otras personas van a ver y no deja guardar insultos, expresiones de odio ni amenazas.</li>
+        <li><strong>Reportar:</strong> en el perfil de una persona toca ⋯ › Reportar. En una entrada del diario, un hito o la pauta de un compañero de equipo, mantén presionado o abre su menú y elige Reportar. Lo reportado se oculta para ti de inmediato.</li>
+        <li><strong>Bloquear:</strong> en el perfil de la persona toca ⋯ › Bloquear. No podrá encontrarte ni invitarte, y no verás lo que escriba en proyectos compartidos.</li>
+        <li><strong>Revisión:</strong> revisamos cada reporte en menos de 24 horas. Si alguien no respeta estos términos, podemos quitar su perfil público, suspender su perfil para que nadie lo encuentre ni reciba sus solicitudes, y pedir a quien coordina el equipo que lo saque del proyecto. Ante amenazas o riesgo para un menor, actuamos de inmediato y avisamos a las autoridades cuando la ley lo exige.</li>
+      </ul>
+
+      <h2>Equipos</h2>
+      <p>Quien coordina un proyecto decide quién entra y puede sacar a cualquier persona del equipo. Para invitar, quien coordina elige a un amigo por su nombre o crea un enlace de invitación. Cada enlace sirve una sola vez: deja entrar a la primera persona que lo abre, así que envíalo solo a quien quieras invitar. Quien coordina también puede aceptar o rechazar a quien pida unirse.</p>
+
+      <h2>Loopy Groups</h2>
+      <p>Los proyectos individuales son gratuitos. Loopy Groups es una suscripción mensual con renovación automática para quien organiza: permite colaborar en los proyectos grupales que posee, con invitaciones, rumbo e hitos compartidos, check-ins y diario del equipo, manteniendo la capacidad de equipo indicada en la app. Las personas invitadas participan gratis. La suscripción cubre estas herramientas de colaboración y sus mejoras habituales; no promete incluir todas las futuras ofertas de pago.</p>
+      <p>El App Store muestra el precio y período localizados antes de confirmar y procesa los cobros. La suscripción se renueva automáticamente salvo que canceles desde las suscripciones de tu cuenta de Apple. Cancelar conserva el acceso hasta el fin del período pagado. Si Apple confirma un período de gracia, el acceso continúa hasta esa fecha. Al vencer o revocarse el acceso, el historial del grupo sigue legible y se pausan las colaboraciones ordinarias; renovar las reactiva en los mismos proyectos. Si cambia quien posee el proyecto, se aplica el acceso de la nueva persona. Puedes seguir usando proyectos individuales y las acciones de cuenta y seguridad.</p>
+      <p>En Ajustes › Loopy Groups puedes restaurar el acceso y administrar la suscripción. Las compras se rigen por los términos de Apple, incluido el <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Contrato de licencia de aplicaciones con licencia (EULA estándar de Apple)</a>. Los reembolsos se solicitan a Apple.</p>
+
+      <h2>Tu cuenta</h2>
+      <p>Puedes dejar de usar Loopy cuando quieras y borrar tu cuenta en Ajustes › Borrar mi cuenta. La <Link to="/privacidad">política de privacidad</Link> explica qué se borra.</p>
+
+      <h2>Cambios</h2>
+      <p>Si cambiamos estos términos, actualizaremos la versión y la fecha de arriba. Si el cambio es importante, Loopy te pedirá aceptarlos de nuevo antes de compartir.</p>
+    </LegalShell>
+  );
+}

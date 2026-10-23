@@ -1,0 +1,332 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Loopy design system — tokens from the app's Figma. All colors live here. */
+
+@theme inline {
+  --font-sans: ui-rounded, "SF Pro Rounded", "Nunito", system-ui, sans-serif;
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-2xl: 28px;
+  --radius-3xl: 36px;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  --color-surface: var(--surface);
+  --color-paper: var(--paper);
+  --color-sun: var(--sun);
+  --color-sun-soft: var(--sun-soft);
+  --color-sun-ink: var(--sun-ink);
+  --color-rope: var(--rope);
+  --color-sticker: var(--sticker);
+  --color-sticker-ink: var(--sticker-ink);
+  --color-bezel: var(--bezel);
+  --color-ok: var(--ok);
+  --color-ok-soft: var(--ok-soft);
+  --color-ok-text: var(--ok-text);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-warn-text: var(--warn-text);
+  --color-stop: var(--stop);
+  --color-stop-soft: var(--stop-soft);
+  --color-stop-text: var(--stop-text);
+  --color-peach: #ffc7a3;
+  --color-lime: #d2e79a;
+  --color-pink: #ffb8cf;
+  --color-aqua: #a9e8c8;
+  --color-violet: #cfbff5;
+  --color-lavender: #d9dcf4;
+  --color-mint: #cfe6d8;
+}
+
+:root {
+  --radius: 20px;
+  --background: #fafaf7;
+  --foreground: #161616;
+  --card: #ffffff;
+  --card-foreground: #161616;
+  --popover: #ffffff;
+  --popover-foreground: #161616;
+  --primary: #161616;
+  --primary-foreground: #fafaf7;
+  --secondary: #f2f2ee;
+  --secondary-foreground: #161616;
+  --muted: #f2f2ee;
+  --muted-foreground: #6b6a64;
+  --accent: #fff4cf;
+  --accent-foreground: #161616;
+  --destructive: #d4553f;
+  --destructive-foreground: #ffffff;
+  --border: #e6e6e3;
+  --input: #e6e6e3;
+  --ring: #161616;
+
+  --surface: #f2f2ee;
+  --paper: #f7f1ea;
+  --sun: #ffe38f;
+  --sun-soft: #fff4cf;
+  --sun-ink: #161616;
+  --rope: #161616;
+  --sticker: #ffffff;
+  --sticker-ink: #161616;
+  --bezel: #0b0b0b;
+  --ok: #2f9e62;
+  --ok-soft: #e4f4ea;
+  --ok-text: #247747;
+  --warn: #e39b2d;
+  --warn-soft: #fcefd9;
+  --warn-text: #895a13;
+  --stop: #d4553f;
+  --stop-soft: #fbe5e1;
+  --stop-text: #ae392a;
+  --shadow-card: 0 1px 3px rgba(22, 22, 22, 0.05), 0 8px 24px rgba(22, 22, 22, 0.07);
+  --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.dark {
+  --background: #111110;
+  --foreground: #f5f4ef;
+  --card: #262624;
+  --card-foreground: #f5f4ef;
+  --popover: #262624;
+  --popover-foreground: #f5f4ef;
+  --primary: #f5f4ef;
+  --primary-foreground: #111110;
+  --secondary: #1d1d1b;
+  --secondary-foreground: #f5f4ef;
+  --muted: #1d1d1b;
+  --muted-foreground: #a4a39b;
+  --accent: #3a331c;
+  --accent-foreground: #f5f4ef;
+  --border: #2e2e2b;
+  --input: #2e2e2b;
+  --ring: #ffe38f;
+
+  --surface: #1d1d1b;
+  --paper: #1d1b18;
+  --sun-soft: #3a331c;
+  --rope: #f5f4ef;
+  --ok: #5cc98e;
+  --ok-soft: #18301f;
+  --ok-text: #5cc98e;
+  --warn: #f2b85a;
+  --warn-soft: #3a2c14;
+  --warn-text: #f2b85a;
+  --stop: #ee7a66;
+  --stop-soft: #3a1c17;
+  --stop-text: #ee7a66;
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* Yellow zones stay light in both themes */
+.on-sun {
+  --ring: #161616;
+  --rope: #161616;
+  background-color: var(--sun);
+  color: var(--sun-ink);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.4;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  :focus-visible {
+    outline: 3px solid var(--ring);
+    outline-offset: 3px;
+    border-radius: 12px;
+  }
+}
+
+@utility display {
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+}
+@utility tnum {
+  font-variant-numeric: tabular-nums;
+  font-weight: 900;
+}
+
+@utility sticker {
+  background: var(--sticker);
+  color: var(--sticker-ink);
+  border: 2.5px solid var(--sticker-ink);
+  box-shadow: 0 3px 0 var(--sticker-ink);
+  border-radius: 999px;
+  font-weight: 800;
+  transform: rotate(var(--rot, 0deg));
+  transition:
+    transform 0.15s var(--spring),
+    box-shadow 0.15s;
+}
+@utility sticker-sun {
+  background: var(--sun);
+}
+@utility sticker-ink {
+  background: var(--sticker-ink);
+  color: #ffffff;
+}
+@utility press {
+  cursor: pointer;
+  &:active {
+    transform: translateY(2px) rotate(var(--rot, 0deg));
+    box-shadow: 0 1px 0 var(--sticker-ink);
+  }
+}
+@utility card-loopy {
+  border-radius: 28px;
+  background: var(--card);
+  box-shadow: var(--shadow-card);
+}
+@utility blob {
+  background: var(--sun);
+  border-radius: 42% 58% 63% 37% / 45% 40% 60% 55%;
+}
+@utility wobble {
+  &:hover {
+    animation: wobble 0.5s ease-in-out;
+  }
+}
+@utility reveal {
+  opacity: 0;
+  transform: translateY(28px) scale(0.97);
+  transition:
+    opacity 0.5s ease-out,
+    transform 0.8s var(--spring);
+  transition-delay: var(--d, 0ms);
+  &.in {
+    opacity: 1;
+    transform: none;
+  }
+}
+@utility anim-bob {
+  animation: bob 3.2s ease-in-out infinite;
+}
+@utility anim-drift {
+  animation: drift 6s ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+@utility anim-marquee {
+  animation: marquee 40s linear infinite;
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+@utility anim-breathe {
+  animation: breathe 3.6s ease-in-out infinite;
+}
+@utility anim-shake {
+  animation: shake 0.45s ease-in-out;
+}
+@utility anim-pop {
+  animation: pop 0.5s var(--spring);
+}
+@utility anim-bounce-soft {
+  animation: bounceSoft 1.8s var(--spring) infinite;
+}
+
+@keyframes wobble {
+  0%, 100% { transform: rotate(var(--rot, 0deg)); }
+  25% { transform: rotate(calc(var(--rot, 0deg) - 6deg)) scale(1.05); }
+  60% { transform: rotate(calc(var(--rot, 0deg) + 5deg)) scale(1.05); }
+}
+@keyframes bob {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-10px) rotate(3deg); }
+}
+@keyframes drift {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 6px -10px; }
+}
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04, 0.97); }
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0) rotate(var(--rot, 0deg)); }
+  20% { transform: translateX(-7px) rotate(-3deg); }
+  40% { transform: translateX(7px) rotate(3deg); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+}
+@keyframes pop {
+  0% { transform: scale(0.4) rotate(var(--rot, 0deg)); opacity: 0; }
+  100% { transform: scale(1) rotate(var(--rot, 0deg)); opacity: 1; }
+}
+@keyframes bounceSoft {
+  0%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-16px) rotate(-2deg); }
+}
+
+.rope-path {
+  transition: d 0.55s var(--spring);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
+
+/* Legal documents */
+:root { --legal-link: #925000; }
+.dark { --legal-link: #ffe38f; }
+.legal-doc { font-size: 17.5px; line-height: 1.6; }
+.legal-doc h1 { font-size: clamp(2.25rem, 6vw, 3rem); font-weight: 900; line-height: 1.1; margin: 0.75rem 0 0.5rem; }
+.legal-doc h2 { font-size: 1.5rem; font-weight: 800; line-height: 1.25; margin: 2.75rem 0 0.75rem; }
+.legal-doc h3 { font-size: 1.15rem; font-weight: 800; line-height: 1.3; margin: 2rem 0 0.5rem; }
+.legal-doc p { margin: 0 0 1rem; }
+.legal-doc ul { list-style: disc; padding-left: 1.4rem; margin: 0 0 1.25rem; }
+.legal-doc li { margin: 0 0 0.6rem; padding-left: 0.2rem; }
+.legal-doc strong { font-weight: 800; }
+.legal-doc a { color: var(--legal-link); text-decoration: underline; text-underline-offset: 3px; font-weight: 700; word-break: break-word; }
+.legal-doc .fecha { color: var(--muted-foreground); }
+@media print {
+  .legal-doc a { color: inherit; }
+  .legal-chip { box-shadow: none; }
+}
+.legal-doc h2, .legal-doc h3 { scroll-margin-top: 96px; text-wrap: balance; }
+.legal-doc p, .legal-doc li { text-wrap: pretty; }
+@media (max-width: 480px) { .legal-doc { font-size: 17px; } .legal-doc h2 { margin-top: 2.25rem; } }
