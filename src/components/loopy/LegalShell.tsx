@@ -2,6 +2,7 @@ import type { CSSProperties, ReactNode } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Nav } from "./Nav";
 import { Footer } from "./Bottom";
+import { pageUrl } from "@/config";
 
 export function legalHead(title: string, description: string, path: string) {
   return {
@@ -11,12 +12,13 @@ export function legalHead(title: string, description: string, path: string) {
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: path },
+      { property: "og:locale", content: "es_ES" },
+      { property: "og:url", content: pageUrl(path) },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:title", content: title },
       { name: "twitter:description", content: description },
     ],
-    links: [{ rel: "canonical", href: path }],
+    links: [{ rel: "canonical", href: pageUrl(path) }],
   };
 }
 

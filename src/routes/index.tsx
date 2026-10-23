@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { pageUrl } from "@/config";
 import { Nav } from "@/components/loopy/Nav";
 import { Hero, Steps, Ticker } from "@/components/loopy/Top";
 import { HoyDemo } from "@/components/loopy/HoyDemo";
@@ -19,12 +20,12 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "es_ES" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: pageUrl("/") },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: pageUrl("/") }],
   }),
   component: Index,
 });
