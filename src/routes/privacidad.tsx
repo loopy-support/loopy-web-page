@@ -5,7 +5,7 @@ export const Route = createFileRoute("/privacidad")({
   head: () =>
     legalHead(
       "Loopy · Política de privacidad",
-      "Política de privacidad de Loopy: qué datos usa, dónde quedan y cómo los borras. Vigente desde el 22 de octubre de 2026.",
+      "Política de privacidad de Loopy: qué datos usa, dónde quedan y cómo los borras. Vigente desde el 8 de noviembre de 2026.",
       "/privacidad",
     ),
   component: Privacidad,
@@ -15,9 +15,9 @@ const MAIL = "mailto:loopy.support.app@gmail.com";
 
 function Privacidad() {
   return (
-    <LegalShell chip="Vigente desde el 22 de octubre de 2026">
+    <LegalShell chip="Vigente desde el 8 de noviembre de 2026">
       <h1>Política de privacidad</h1>
-      <p className="fecha">Vigente desde el 22 de octubre de 2026</p>
+      <p className="fecha">Vigente desde el 8 de noviembre de 2026</p>
 
       <p>Loopy es una app para avanzar en proyectos personales y en equipo. Esta política explica qué datos usa, dónde quedan y cómo los borras. El responsable es Luis Agustín Álvarez Ibaceta. Para cualquier consulta de privacidad, escribe a <a href={MAIL}>loopy.support.app@gmail.com</a>.</p>
 
@@ -76,6 +76,7 @@ function Privacidad() {
         <li>También se borran al momento tus proyectos, incluidos los que compartías con un equipo: el equipo deja de tenerlos.</li>
         <li>Los reportes que otras personas hicieron sobre ti no se borran con tu cuenta, porque son de quien los hizo. Los necesitamos para revisar cada caso y los borramos a los 12 meses de cerrarlo.</li>
         <li>En los proyectos de otras personas, lo que escribieron los demás es suyo y no se borra con tu cuenta.</li>
+        <li>Si antes de borrar tu cuenta ya habías salido de un equipo, o te quitaron de él, Loopy ya no tiene acceso a ese proyecto y no puede borrar lo que dejaste ahí: tus check-ins sin nota, los hitos que creaste y el documento base que subiste quedan como historia del equipo. Tus entradas de diario y tus check-ins con nota sí se borran, porque se guardan en tu iCloud.</li>
       </ul>
 
       <h2>Tus derechos y cómo retirar tu consentimiento</h2>
