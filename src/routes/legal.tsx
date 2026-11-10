@@ -16,7 +16,7 @@ export const Route = createFileRoute("/legal")({
 
 const DOCS = [
   { to: "/terminos", title: "Términos de uso", line: "Versión 2 · Vigente desde el 20 de octubre de 2026" },
-  { to: "/privacidad", title: "Política de privacidad", line: "Vigente desde el 9 de noviembre de 2026" },
+  { to: "/privacidad", title: "Política de privacidad", line: "Vigente desde el 10 de noviembre de 2026" },
   { to: "/soporte", title: "Ayuda y contacto", line: "Respondemos en menos de 24 horas." },
 ] as const;
 
